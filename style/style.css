@@ -1,0 +1,90 @@
+
+.container {
+    
+    display: flex;
+    justify-content: center;
+   
+    gap: 100px;
+    
+}
+
+  
+.box {
+    /* border: 1px solid tomato; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 50px;
+    width: 300px;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 70px 63px -60px #000000;
+    background-size: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 300ms ease-in;
+}
+
+.box.al {
+    background-image: url('https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg');
+}
+.box.ben {
+    background-image: url('https://i.pinimg.com/originals/28/d2/e6/28d2e684e7859a0dd17fbd0cea00f8a9.jpg'); 
+}
+.box.patrick {
+    background-image: url('https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg');
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    inset: 5px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+}
+
+.box:hover {
+    background-position: left center;
+    background-size: 600px;
+}
+
+.box:hover > .box-list, 
+.box:hover > .box-title,
+.box:hover::before
+{
+    opacity: 1;
+}
+
+
+.box-title {
+    color: #fff;
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+}
+.box-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+}
+
+.box-list-item-link {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.box-list-item-link-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+}
+
+
+
